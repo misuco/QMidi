@@ -8,15 +8,36 @@
 
 // TODO: error reporting
 
+QMap<QString, QString> QMidiOut::devices()
+{
+    return QMap<QString,QString>();
+}
+
 QMidiOut::QMidiOut()
 	: fMidiPtrs(NULL),
 	  fConnected(false)
 {
 }
+
 QMidiOut::~QMidiOut()
 {
 	if (fConnected)
 		disconnect();
+}
+
+bool QMidiOut::connect(QString outDeviceId)
+{
+    return false;
+}
+
+void QMidiOut::disconnect()
+{
+
+}
+
+void QMidiOut::sendMsg(qint32 msg)
+{
+
 }
 
 void QMidiOut::sendEvent(const QMidiEvent& e)
